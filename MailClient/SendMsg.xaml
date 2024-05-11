@@ -1,0 +1,44 @@
+﻿<Window x:Class="MailClient.SendMsg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MailClient"
+            mc:Ignorable="d" Background="#FFF0FFF4"
+    Title="SendWin" Height="450" Width="800">
+    <Grid Margin="5 0 5 5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.12*"></RowDefinition>
+            <RowDefinition Height="0.12*"></RowDefinition>
+            <RowDefinition Height="0.12*"></RowDefinition>
+            <RowDefinition Height="0.12*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.13*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Content="← back" HorizontalAlignment="Left" BorderBrush="Transparent" VerticalAlignment="Top" FontWeight="DemiBold" Foreground="Red" Background="Transparent" Click="BackButton_Click" FontSize="10"/>
+        <Label Grid.Row="1" Content="Sender:" FontWeight="DemiBold"/>
+        <Label x:Name="fromObj" Grid.Row="1" Grid.Column="1"/>
+
+        <Label Grid.Column="2" Grid.Row="1" Content="Attached files:" FontStyle="Italic"/>
+
+        <Label Grid.Row="2" Content="Receiver:" FontWeight="DemiBold"/>
+        <TextBox x:Name="toObj" VerticalContentAlignment="Center" Margin="5"  Grid.Row="2" Grid.Column="1"/>
+
+        <Label Grid.Row="3" Content="Theme:" FontWeight="DemiBold"/>
+        <TextBox x:Name="subject" VerticalContentAlignment="Center" Margin="5" Grid.Row="3" Grid.Column="1"/>
+
+        <TextBox x:Name="body" Grid.Row="4" Grid.ColumnSpan="2" Margin="0 0 5 0"></TextBox>
+
+        <ListBox x:Name="listBox" Grid.Row="2" Grid.Column="2" Grid.RowSpan="3" Margin="5, 5, 0, 0" />
+
+        <Button Margin="5" Click="SendButton_Click" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="6" Width="100" FontWeight="Bold" Background="#FFE4B9B9">Send</Button>
+        <Button Margin="5" Click="AttachFile_Click" Grid.Column="2" Grid.Row="5" Width="100" FontWeight="Bold" Background="#FFE4B9B9">Attach a file</Button>
+        <CheckBox x:Name="checkBox" Content="mark as important" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Margin="0,0,368,0"/>
+
+    </Grid>
+</Window>
